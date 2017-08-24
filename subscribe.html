@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Kynect - Monitoring Collar</title>
+        <meta charset=utf-8 />
+
+        <!-- Favicon Import -->
+        <link   rel="icon" 
+                href="static/media/images/favicon/favicon.ico">
+
+        <!-- Bootstrap Stylesheets -->
+        <link   rel="stylesheet" 
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- External Stylesheets -->
+        <link   rel="stylesheet"
+                type="text/css" 
+                href="static/css/master.css">
+
+        <!-- Google Web Fonts -->
+        <link   rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Asap|Catamaran|Comfortaa|Encode+Sans|Khula|Maven+Pro|Open+Sans|Oxygen|PT+Sans|Quicksand|Raleway|Varela+Round">
+
+        <!-- JQuery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <!-- Bootstrap Javascript Library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="subscribe-main-section font-kynect">
+            <div class="header-container">
+                <div class="kynect-title color-offwhite float-left">
+                    <img src="static/media/images/logo/kynect_logo.png">
+                    <span>Kynect</span>
+                </div>
+
+                <div class="kynect-contact color-offwhite"> 
+                    <span class="phone-icon glyphicon glyphicon-earphone"></span>
+                    <span class="kynect-phone font-kynect">(312) 396-4118</span>
+                    <span class="email-icon glyphicon glyphicon-envelope"></span>
+                    <span class="kynect-email font-kynect">support@kynectcollar.com</span>
+                </div>
+            </div>
+
+            <div class="subscribe-form-container color-offwhite font-kynect">
+                <!-- <img src="static/media/images/icons/paws.png"> -->
+
+                <span class="subscribe-form-heading"><b>Kynect</b> With Your <b>Best Friend</b></span>
+
+                <span class="subscribe-form-subheading color-offwhite">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                </span>
+
+                <br />
+                <br />
+
+                <form   action="" 
+                        method="POST"
+                        name="subscribe-form"
+                        target="no-target"
+                        id="subscribe-form">
+                    <div class="form-div">
+                        <input  type="checkbox" 
+                                name="beta"
+                                class="form-control subscribe-beta-input" 
+                                id="beta"
+                                value="No" >
+                        <label  for=beta
+                                class="color-offwhite">I want to be a <u>beta tester</u></label>
+                    </div>
+
+                    <input  type="text"
+                            name="fname"  
+                            placeholder="First Name"
+                            class="form-control subscribe-name-input" 
+                            id="fname"
+                            required>
+
+                    <input  type="text" 
+                            name="lname"  
+                            placeholder="Last Name"
+                            class="form-control subscribe-name-input" 
+                            id="lname"
+                            required>
+
+                    <input  type="email" 
+                            name="email"
+                            class="form-control subscribe-email-input" 
+                            id="email" 
+                            placeholder="example@domain.com"
+                            required>
+
+                    <button type="submit" 
+                            value="SUBMIT" 
+                            name="submit" 
+                            class="btn btn-primary subscribe-submit-btn border-offwhite background-none"
+                            id="submit-button">Subscribe</button>
+                </form>
+
+                <!-- Hack that prevents submit from going to another page -->
+                <iframe src="#" id="no-target" name="no-target" style="display: none"></iframe>
+            </div>
+
+            <!-- BEGIN POPUP DIV -->
+            <div class="subscribe-popup-container" id="popDiv">
+                <div class="subscribe-popup background-white font-kynect">
+                    <div>
+                        <span>Thank You for Signing Up!</span>
+
+                        <p class="color-darkgrey">Thank you for signing up for updates on the development of the Kynect collar. We are very excited to share our journey with you, so please look out for future updates from the Kynect team!</p>
+
+                        <a href="subscribe.html">
+                            <div class="color-white background-blue">   
+                                <div>Return</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END POPUP DIV -->
+        </div>
+
+        <div class="footer color-white">
+            <div>
+                <a href=""><img src="static/media/images/icons/social_media/PNG/circle_grey/Facebook.png"></a>
+                <a href=""><img src="static/media/images/icons/social_media/PNG/circle_grey/Instagram.png"></a>
+                <a href=""><img src="static/media/images/icons/social_media/PNG/circle_grey/Linkedin.png"></a>
+            </div>
+
+            <span class="color-grey">Copyright &copy; 2017 | 500 N. Michigan Avenue, Chicago | (312) 396-4118 | support@kynectcollar.com</span>
+        </div>
+        
+        <!-- SCRIPTS GO HERE -->
+        <script>
+            $('#subscribe-form').one('submit',function(){
+                var fname = encodeURIComponent($('#fname').val());
+                var fname_id = "entry.1973480414";
+                var lname = encodeURIComponent($('#lname').val());
+                var lname_id = "entry.325082743";
+                var email = encodeURIComponent($('#email').val());
+                var email_id = "entry.1110405915";
+                var beta = encodeURIComponent($('#beta').val());
+                var beta_id = "entry.2111623817";
+
+                var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdiyHonwU8mHO6ZK9zOZfKHgQaMKqaAYVoLihavfiaDUwmYQA/formResponse?';
+                var submitRef = '&submit=3096787797015012519';
+                var submitURL = (baseURL + fname_id + "=" + fname + "&" + lname_id + "=" + lname + "&" + email_id + "=" + email + "&" + beta_id + "=" + beta + submitRef);
+
+                console.log(submitURL);
+
+                $(this)[0].action=submitURL;
+
+                $('input[type="text"], textarea').val('');
+                $('input[type="email"], textarea').val('');
+
+                $('.subscribe-popup-container').css('display', 'block');
+            });
+        </script>
+
+        <script>
+            // assign function to onclick property of checkbox
+            document.getElementById('beta').onclick = function() {
+                // access properties using this keyword
+                if ( this.checked ) {
+                    // if checked ...
+                    this.value = 'Yes';
+                } else {
+                    // if not checked ...
+                    this.value = 'No';
+                }
+            };
+        </script>
+
+        <!-- SCIPTS END HERE -->
+    </body>
+</html>
