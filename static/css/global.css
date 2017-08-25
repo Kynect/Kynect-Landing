@@ -46,17 +46,6 @@ textarea {
     -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75); }
 
-.footer > div {
-    display: block;
-    width: 220px;
-    margin: 0 auto; }
-
-.footer img {
-    display: inline-block;
-    width: 50px;
-    height: auto;
-    margin: 0 10px; }
-
 .footer span {
     display: block;
     width: 100%;
@@ -89,8 +78,11 @@ textarea {
 
 .kynect-contact {
     display: block;
+    width: auto;
     height: 46px;
-    padding-top: 20px; }
+    margin-right: 7%;
+    padding-top: 20px; 
+    float: right; }
 
 .phone-icon,
 .email-icon {
@@ -99,26 +91,6 @@ textarea {
 
 .kynect-phone {
     margin-right: 10px; }
-
-@media (max-width: 767px) {
-    .kynect-title {
-        margin-left: 20px; }
-
-    .kynect-contact {
-        margin-left: 22px;
-        clear: left;
-        float: left; }
-}
-
-@media (min-width: 768px) {
-    .kynect-title {
-        margin-left: 7%; }
-
-    .kynect-contact {
-        width: auto;
-        margin-right: 7%;
-        float: right; }
-}
 
 .subscribe-main-section {
     display: block;
@@ -171,7 +143,44 @@ textarea {
         border-color: #eeeeee;
         color: white; }
 
+.kynect-bottom-contact {
+    display: block;
+    width: 390px;
+    position: fixed;
+    margin: 0 auto 0 auto;
+    bottom: 125px;
+    left: 50%;
+    margin-left: -195px; }
+
+    .kynect-bottom-contact .social-media-container {
+        display: block;
+        width: 220px;
+        margin: 0 auto; }
+
+    .kynect-bottom-contact img {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        height: auto;
+        margin: 0 10px; }
+
+    .kynect-bottom-contact > .kynect-email-phone {
+        display: block;
+        width: 390px;
+        margin: 20px auto 0 auto; }
+
+@media (max-width: 767px) {
+    .kynect-title {
+        margin-left: 50px; }
+
+    .kynect-bottom-contact {
+        bottom: 50px; }
+}
+
 @media (max-width: 500px) {
+    .kynect-title {
+        margin-left: 25px; }
+
     .subscribe-form-container {
         text-align: center; }
 
@@ -222,6 +231,9 @@ textarea {
         display: inline-block;
         width: 270px;
         margin-top: 15px; }
+
+    .kynect-bottom-contact {
+        bottom: 10px; }
 }
 
 @media (min-width: 501px) {
@@ -278,6 +290,9 @@ textarea {
 }
 
 @media (min-width: 768px) {
+    .kynect-title {
+        margin-left: 7%; }
+
     .subscribe-form-container {
         text-align: center; }
 
